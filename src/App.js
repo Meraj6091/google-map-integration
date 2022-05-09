@@ -4,8 +4,11 @@ import "./App.css";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import { db } from "./firebase";
 import { onValue, ref } from "firebase/database";
+import env from "react-dotenv";
+
 function App() {
 	const [state, setState] = useState([]);
+
 	useEffect(() => {
 		onValue(ref(db), (snapshot) => {
 			const data = snapshot.val();
@@ -48,5 +51,5 @@ function App() {
 }
 
 export default GoogleApiWrapper({
-	apiKey: "AIzaSyBapHbGUTFy0R187aWxdEggA8dQb48I8tM",
+	apiKey: process.env.Api_Key,
 })(App);

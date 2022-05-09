@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyDa9913OZkNZCcuRy6T_fpTbaB-lAR3-so",
+	apiKey: process.env.Firebase_Api_Key,
 	authDomain: "anomaly-location-data.firebaseapp.com",
 	databaseURL: "https://anomaly-location-data-default-rtdb.firebaseio.com",
 	projectId: "anomaly-location-data",
